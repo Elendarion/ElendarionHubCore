@@ -1,2 +1,3 @@
-# ElendarionHubCore
-The main plugin of Hub server.
+#ElendarionHubCore
+
+The main plugin for the HUB of Elendarion

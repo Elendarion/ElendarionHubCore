@@ -1,0 +1,50 @@
+name: ${project.name}
+main: fr.mimich.elendarionhubcore.ElendarionHubCore
+version: ${project.version}
+author: Mimich-FR
+description: ${project.description}
+api-version: 1.8.8
+depend:
+  - NPCLibPlugin
+  - ProtocolLib
+commands:
+  help:
+    permission: ""
+    usage: /help
+    description: Vous permet de recevoir recevoir une aide.
+    aliases:
+      - ?
+      - h
+      - hl
+      - he
+      - hlp
+  infos:
+    permission: ""
+    usage: /infos
+    description: Vous permet de pouvoir afficher un GUI des infos.
+    aliases:
+      - i
+      - if
+  spawn:
+    permission: ""
+    usage: /spawn
+    description: Vous permet de retourner au spawn.
+    aliases:
+      - s
+      - sp
+      - lobby
+      - hub
+  ping:
+    permission: ""
+    usage: /ping
+    description: Vous permet de connaitre votre ping.
+    aliases:
+      - p
+      - png
+  show:
+    permission: ""
+    usage: /show
+    description: Vous permet de voir ou non les joueurs et les particules.
+    aliases:
+      - sh
+      - so

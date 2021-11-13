@@ -1,0 +1,140 @@
+not-player: "Sorry your are not a player."
+removed-permissions:
+  - "bukkit.command.plugins"
+  - "bukkit.command.version"
+  - "bukkit.command.help"
+  - "minecraft.command.help"
+  - "minecraft.command.msg"
+  - "minecraft.command.me"
+help:
+  top: "&7<---------------------&8[Help]&7--------------------->"
+  format: "&b%usage% &9%description%"
+  bottom: "&7<------------------------------------------------>"
+spawn:
+  location:
+    x: 0.5
+    y: 100.0
+    z: 0.5
+    yaw: 0.0
+    pitch: 0.0
+
+super-gun:
+  enable: true
+  #Max 4.0
+  power-multiplier: 4.0
+  explosion: true
+  location:
+    in:
+      x: 0.0
+      y: 98.0
+      z: 48.0
+    out:
+      x: 0.5
+      y: 170.0
+      z: 13.5
+      yaw: 180.0
+      pitch: 0.0
+
+message:
+  op-join-server: "&4%player% a rejoint le serveur."
+  ping: "&cVotre ping est de &a%ping% ms&c."
+  spawn-teleport: "&3Teleporation au spawn."
+  show-on: "&aLes particules et les joueurs vous sont maintenant &2visibles&a."
+  show-off: "&cLes particules et les joueurs vous sont maintenant &4invisibles&c."
+
+bow-thruster:
+  #Max 4.0
+  multiplier:
+    x: 2.0
+    y: 1.0
+    z: 2.0
+item:
+  join-item:
+    compass-servers-selector:
+      name: "&6Serveurs"
+      lore:
+        - "&7Vous permet de choisir votre mode de jeu."
+    cosmetics-selector:
+      name: "&bCosmetiques"
+      lore:
+        - "&7Vous permet de choisir votre cosmetique."
+    bow-thruster:
+      name: "&ePropulseur"
+      lore:
+        - "&7Vous permet de voler."
+    server-infos:
+      name: "&bInfos"
+      lore:
+        - "&7%description%"
+    show-on:
+      name: "&aShow (ON)"
+      lore:
+        - "&7%description%"
+        - "&8Cliquez pour &c(Off)"
+    show-off:
+      name: "&cShow (OFF)"
+      lore:
+        - "&7%description%"
+        - "&8Cliquez pour&a(On)"
+npc:
+  faction:
+    lines:
+      - "&6Rejoindre le serveur &9%server-name%&6."
+      - "&7(Cliquez)"
+    location:
+      x: 0.5
+      y: 98.0
+      z: 10.5
+    look-at: "spawn"
+    skin: "ewogICJ0aW1lc3RhbXAiIDogMTYzNTY4MTQwNjA2OSwKICAicHJvZmlsZUlkIiA6ICI0NmY3N2NjNmQ2MjU0NjEzYjc2NmYyZDRmMDM2MzZhNiIsCiAgInByb2ZpbGVOYW1lIiA6ICJNaXNzV29sZiIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9hMDYyN2Y0OThmZDVhMzQ3NmM4ZTRhNWNhMmIxYWE2NDhmOWQ3ZGNmMWY5YjVmZGU3MTRjODVkOTdhNTg3Nzk5IgogICAgfQogIH0KfQ=="
+    server-teleport: true
+    server-name: "faction"
+inventory:
+  leave: "&cPour Quitter. &4(Cliquez)"
+  servers-selector:
+    name: "&6Selection du serveur."
+    servers:
+      faction:
+        material: "DIAMOND_SWORD"
+        position: 13
+        name: "&6Faction"
+        lore:
+          - ""
+  server-infos:
+    name: "&3Informations du serveur."
+    commands-names:
+      help:
+        material: "BOOK_AND_QUILL"
+        position: 11
+        name: "&e%usage%"
+        lore:
+          - "&7%description%"
+      infos:
+        material: "PAPER"
+        position: 13
+        name: "&2%usage%"
+        lore:
+          - "&7%description%"
+      spawn:
+        material: "ENDER_PEARL"
+        position: 15
+        name: "&1%usage%"
+        lore:
+          - "&7%description%"
+      ping:
+        material: "SLIME_BLOCK"
+        position: 29
+        name: "&3%usage%"
+        lore:
+          - "&7%description%"
+      show:
+        material: "TORCH"
+        position: 33
+        name: "&c%usage%"
+        lore:
+          - "&7%description%"
+scoreboard:
+  title: "&6Elendarion"
+  lines:
+    - "&9Pseudo: &b%player-name%"
+    - "&2Joueurs: &c%player-number%&a/%max-player%"
