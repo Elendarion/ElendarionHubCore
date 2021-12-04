@@ -18,10 +18,10 @@ commands:
       - hl
       - he
       - hlp
-  infos:
+  info:
     permission: ""
-    usage: /infos
-    description: Vous permet de pouvoir afficher un GUI des infos.
+    usage: /info
+    description: Vous permet de pouvoir afficher un GUI des info.
     aliases:
       - i
       - if
