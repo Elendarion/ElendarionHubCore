@@ -1,4 +1,4 @@
-package fr.mimich.elendarionhubcore.inventorys;
+package fr.mimich.elendarionhubcore.inventory;
 
 import fr.mimich.elendarionhubcore.ElendarionHubCore;
 import fr.mimich.elendarionhubcore.utils.SuperConfig;
