@@ -1,5 +1,6 @@
 package fr.mimich.elendarionhubcore;
 
+import fr.mimich.elendarionhubcore.utils.SuperConfig;
 import fr.mrmicky.fastinv.ItemBuilder;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
@@ -22,9 +23,9 @@ public class JoinItem {
     }
 
     private ItemStack itemJoinBuilder(Material material, String itemConfigAddress, Map<String, String> placeHolders, int data){
-        final String PREFIX = "join-item.";
+        final String prefix = "join-item.";
         SuperConfig superConfig = this.main.getSuperConfig();
-        return new ItemBuilder(material).data(data).name(superConfig.getConfigText(SuperConfig.TextType.ITEM, PREFIX + itemConfigAddress + ".name")).lore(superConfig.getConfigTextList(SuperConfig.TextType.ITEM, PREFIX + itemConfigAddress + ".lore", placeHolders)).enchant(Enchantment.DURABILITY).flags(ItemFlag.HIDE_ENCHANTS).build();
+        return new ItemBuilder(material).data(data).name(superConfig.getConfigText(SuperConfig.TextType.ITEM, prefix + itemConfigAddress + ".name")).lore(superConfig.getConfigTextList(SuperConfig.TextType.ITEM, prefix + itemConfigAddress + ".lore", placeHolders)).enchant(Enchantment.DURABILITY).flags(ItemFlag.HIDE_ENCHANTS).build();
     }
 
     private ItemStack itemJoinBuilder(Material material, String itemConfigAddress, Map<String, String> placeHolders){
@@ -40,7 +41,7 @@ public class JoinItem {
     }
 
     public ItemStack COMPASS_SERVERS_SELECTOR;
-    public ItemStack SERVER_INFOS;
+    public ItemStack SERVER_INFO;
     public ItemStack COSMETICS_SELECTOR;
     public ItemStack BOW_THRUSTER;
 
@@ -49,7 +50,7 @@ public class JoinItem {
 
     private void init(){
         COMPASS_SERVERS_SELECTOR = this.itemJoinBuilder(Material.COMPASS, "compass-servers-selector");
-        SERVER_INFOS = this.itemJoinBuilder(Material.PAPER, "server-infos", this.placeHolderDescription("infos"));
+        SERVER_INFO = this.itemJoinBuilder(Material.PAPER, "server-info", this.placeHolderDescription("info"));
         COSMETICS_SELECTOR = this.itemJoinBuilder(Material.WATCH, "cosmetics-selector");
         BOW_THRUSTER = this.itemJoinBuilder(Material.BOW, "bow-thruster");
 
@@ -61,7 +62,7 @@ public class JoinItem {
         Inventory playerInventory = player.getInventory();
         playerInventory.clear();
         playerInventory.setItem(0, COMPASS_SERVERS_SELECTOR);
-        playerInventory.setItem(2, SERVER_INFOS);
+        playerInventory.setItem(2, SERVER_INFO);
         playerInventory.setItem(4, COSMETICS_SELECTOR);
         playerInventory.setItem(8, BOW_THRUSTER);
         playerInventory.setItem(6, SHOW_ON);

@@ -15,7 +15,7 @@ public class SpawnVoidListener implements Listener {
     }
 
     @EventHandler
-    public void onPlayerChat(PlayerMoveEvent event) {
+    public void onPlayerMove(PlayerMoveEvent event) {
         Player player = event.getPlayer();
         if (player.getLocation().getY() < 0D) {
             this.main.getSpawn().teleportSpawn(player);

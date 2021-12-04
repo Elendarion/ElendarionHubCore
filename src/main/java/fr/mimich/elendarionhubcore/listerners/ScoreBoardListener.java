@@ -1,7 +1,7 @@
 package fr.mimich.elendarionhubcore.listerners;
 
 import fr.mimich.elendarionhubcore.ElendarionHubCore;
-import fr.mimich.elendarionhubcore.SuperConfig;
+import fr.mimich.elendarionhubcore.utils.SuperConfig;
 import fr.mrmicky.fastboard.FastBoard;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;

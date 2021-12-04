@@ -1,5 +1,7 @@
 package fr.mimich.elendarionhubcore;
 
+import fr.mimich.elendarionhubcore.utils.SuperConfig;
+import net.jitse.npclib.api.NPC;
 import net.jitse.npclib.api.skin.Skin;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -7,15 +9,15 @@ import org.bukkit.configuration.file.FileConfiguration;
 
 import java.util.*;
 
-public class NPC {
+public class CustomNPC {
 
     private ElendarionHubCore main;
 
-    private List<net.jitse.npclib.api.NPC> npcList;
+    private List<NPC> npcList;
 
-    private Map<net.jitse.npclib.api.NPC, String> npcServers;
+    private Map<NPC, String> npcServers;
 
-    public NPC(ElendarionHubCore main) {
+    public CustomNPC(ElendarionHubCore main) {
         this.main = main;
         this.npcList = new ArrayList<>();
         this.npcServers = new HashMap<>();
@@ -58,11 +60,11 @@ public class NPC {
         }
     }
 
-    public List<net.jitse.npclib.api.NPC> getNpcList() {
+    public List<NPC> getNpcList() {
         return npcList;
     }
 
-    public Map<net.jitse.npclib.api.NPC, String> getNpcServers() {
+    public Map<NPC, String> getNpcServers() {
         return npcServers;
     }
 }

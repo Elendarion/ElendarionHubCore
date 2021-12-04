@@ -10,12 +10,9 @@ import java.util.Set;
 
 public class CustomHelp {
 
-    private ElendarionHubCore main;
-
     private Set<Command> commands;
 
-    public CustomHelp(ElendarionHubCore main) {
-        this.main = main;
+    public CustomHelp() {
         this.commands = new HashSet<>();
         this.init();
     }

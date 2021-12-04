@@ -1,7 +1,7 @@
 package fr.mimich.elendarionhubcore.commands;
 
 import fr.mimich.elendarionhubcore.ElendarionHubCore;
-import fr.mimich.elendarionhubcore.SuperConfig;
+import fr.mimich.elendarionhubcore.utils.SuperConfig;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -20,18 +20,18 @@ public class CustomHelpCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
-        final String JUMPER = "\n";
+        final String jumper = "\n";
         Map<String, String> placeHolders = new HashMap<>();
         StringBuilder stringBuilder = new StringBuilder();
         for (Command c : this.main.getCustomHelp().getCommands()) {
             placeHolders.put("%usage%", c.getUsage());
             placeHolders.put("%description%", c.getDescription());
             if (commandSender.hasPermission(c.getPermission()) || commandSender.isOp()) {
-                stringBuilder.append(this.main.getSuperConfig().getConfigText(SuperConfig.TextType.HELP, "format", placeHolders) + JUMPER);
+                stringBuilder.append(this.main.getSuperConfig().getConfigText(SuperConfig.TextType.HELP, "format", placeHolders)).append(jumper);
             }
             placeHolders.clear();
         }
-        commandSender.sendMessage(this.main.getSuperConfig().getConfigText(SuperConfig.TextType.HELP, "top") + JUMPER + stringBuilder + this.main.getSuperConfig().getConfigText(SuperConfig.TextType.HELP, "bottom"));
+        commandSender.sendMessage(this.main.getSuperConfig().getConfigText(SuperConfig.TextType.HELP, "top") + jumper + stringBuilder + this.main.getSuperConfig().getConfigText(SuperConfig.TextType.HELP, "bottom"));
         return true;
     }
 }

@@ -62,8 +62,8 @@ item:
       name: "&ePropulseur"
       lore:
         - "&7Vous permet de voler."
-    server-infos:
-      name: "&bInfos"
+    server-info:
+      name: "&bInfo"
       lore:
         - "&7%description%"
     show-on:
@@ -100,8 +100,8 @@ inventory:
         name: "&6Faction"
         lore:
           - ""
-  server-infos:
-    name: "&3Informations du serveur."
+  server-info:
+    name: "&3Information du serveur."
     commands-names:
       help:
         material: "BOOK_AND_QUILL"
@@ -109,7 +109,7 @@ inventory:
         name: "&e%usage%"
         lore:
           - "&7%description%"
-      infos:
+      info:
         material: "PAPER"
         position: 13
         name: "&2%usage%"

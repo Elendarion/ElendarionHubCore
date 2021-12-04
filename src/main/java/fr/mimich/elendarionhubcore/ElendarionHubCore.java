@@ -3,9 +3,11 @@ package fr.mimich.elendarionhubcore;
 import com.comphenix.protocol.ProtocolLibrary;
 import com.comphenix.protocol.ProtocolManager;
 import fr.mimich.elendarionhubcore.commands.*;
-import fr.mimich.elendarionhubcore.inventorys.ServerInfosInventory;
+import fr.mimich.elendarionhubcore.inventorys.ServerInfoInventory;
 import fr.mimich.elendarionhubcore.inventorys.ServerSelectorInventory;
 import fr.mimich.elendarionhubcore.listerners.*;
+import fr.mimich.elendarionhubcore.utils.InventoryUtil;
+import fr.mimich.elendarionhubcore.utils.SuperConfig;
 import fr.mrmicky.fastinv.FastInvManager;
 import net.jitse.npclib.NPCLib;
 import org.bukkit.ChatColor;
@@ -22,11 +24,11 @@ public class ElendarionHubCore extends JavaPlugin {
     private Spawn spawn;
     private Show show;
     private CustomHelp customHelp;
-    private NPC npc;
+    private CustomNPC npc;
 
     private InventoryUtil inventoryUtil;
     private ServerSelectorInventory serverSelectorInventory;
-    private ServerInfosInventory serverInfosInventory;
+    private ServerInfoInventory serverInfoInventory;
 
     @Override
     public void onEnable() {
@@ -39,8 +41,8 @@ public class ElendarionHubCore extends JavaPlugin {
         this.joinItem = new JoinItem(this);
         this.spawn = new Spawn(this);
         this.show = new Show(this);
-        this.customHelp = new CustomHelp(this);
-        this.npc = new NPC(this);
+        this.customHelp = new CustomHelp();
+        this.npc = new CustomNPC(this);
 
         PluginManager pm = getServer().getPluginManager();
         pm.registerEvents(new ScoreBoardListener(this), this);
@@ -57,14 +59,14 @@ public class ElendarionHubCore extends JavaPlugin {
         getCommand("spawn").setExecutor(new SpawnCommand(this));
         getCommand("ping").setExecutor(new PingComand(this));
         getCommand("show").setExecutor(new ShowCommand(this));
-        getCommand("infos").setExecutor(new InfosCommand(this));
+        getCommand("info").setExecutor(new InfoCommand(this));
 
         ProtocolManager protocolManager = ProtocolLibrary.getProtocolManager();
         protocolManager.addPacketListener(new SuperGunListener(this));
         protocolManager.addPacketListener(new ShowListener(this));
 
         this.inventoryUtil = new InventoryUtil(this);
-        this.serverInfosInventory = new ServerInfosInventory(this);
+        this.serverInfoInventory = new ServerInfoInventory(this);
         this.serverSelectorInventory = new ServerSelectorInventory(this);
     }
 
@@ -101,7 +103,7 @@ public class ElendarionHubCore extends JavaPlugin {
         return customHelp;
     }
 
-    public NPC getNpc() {
+    public CustomNPC getNpc() {
         return npc;
     }
 
@@ -113,7 +115,7 @@ public class ElendarionHubCore extends JavaPlugin {
         return serverSelectorInventory;
     }
 
-    public ServerInfosInventory getInfosInventory() {
-        return serverInfosInventory;
+    public ServerInfoInventory getInfoInventory() {
+        return serverInfoInventory;
     }
 }

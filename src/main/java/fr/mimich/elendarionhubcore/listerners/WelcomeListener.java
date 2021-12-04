@@ -1,7 +1,7 @@
 package fr.mimich.elendarionhubcore.listerners;
 
 import fr.mimich.elendarionhubcore.ElendarionHubCore;
-import fr.mimich.elendarionhubcore.SuperConfig;
+import fr.mimich.elendarionhubcore.utils.SuperConfig;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

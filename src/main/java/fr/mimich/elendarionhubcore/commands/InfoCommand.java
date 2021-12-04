@@ -6,11 +6,11 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class InfosCommand implements CommandExecutor {
+public class InfoCommand implements CommandExecutor {
 
     private ElendarionHubCore main;
 
-    public InfosCommand(ElendarionHubCore main) {
+    public InfoCommand(ElendarionHubCore main) {
         this.main = main;
     }
 
@@ -18,7 +18,7 @@ public class InfosCommand implements CommandExecutor {
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
 
         if (commandSender instanceof Player) {
-            this.main.getInfosInventory().open((Player) commandSender);
+            this.main.getInfoInventory().open((Player) commandSender);
         } else {
             commandSender.sendMessage(this.main.getConfig().getString("not-player"));
         }

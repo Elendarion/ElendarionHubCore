@@ -1,7 +1,7 @@
 package fr.mimich.elendarionhubcore.commands;
 
 import fr.mimich.elendarionhubcore.ElendarionHubCore;
-import fr.mimich.elendarionhubcore.SuperConfig;
+import fr.mimich.elendarionhubcore.utils.SuperConfig;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;

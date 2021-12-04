@@ -1,7 +1,7 @@
 package fr.mimich.elendarionhubcore.inventorys;
 
 import fr.mimich.elendarionhubcore.ElendarionHubCore;
-import fr.mimich.elendarionhubcore.SuperConfig;
+import fr.mimich.elendarionhubcore.utils.SuperConfig;
 import fr.mrmicky.fastinv.FastInv;
 import fr.mrmicky.fastinv.ItemBuilder;
 import org.bukkit.Material;
@@ -49,9 +49,9 @@ public class ServerSelectorInventory extends FastInv {
     @Override
     protected void onClick(InventoryClickEvent event) {
         Player player = (Player) event.getWhoClicked();
-        for (Map.Entry entry : this.itemStackServerName.entrySet()) {
-            if (((ItemStack) entry.getKey()).isSimilar(event.getCurrentItem())) {
-                this.main.getServerTeleport().teleportPlayerToServer(player, (String) entry.getValue());
+        for (Map.Entry<ItemStack, String> entry : this.itemStackServerName.entrySet()) {
+            if (entry.getKey().isSimilar(event.getCurrentItem())) {
+                this.main.getServerTeleport().teleportPlayerToServer(player, entry.getValue());
                 player.closeInventory();
             }
         }

@@ -1,4 +1,6 @@
-package fr.mimich.elendarionhubcore;
+package fr.mimich.elendarionhubcore.utils;
+
+import fr.mimich.elendarionhubcore.ElendarionHubCore;
 
 import java.util.ArrayList;
 import java.util.Collections;

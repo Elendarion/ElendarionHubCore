@@ -1,5 +1,7 @@
-package fr.mimich.elendarionhubcore;
+package fr.mimich.elendarionhubcore.utils;
 
+import fr.mimich.elendarionhubcore.ElendarionHubCore;
+import fr.mimich.elendarionhubcore.utils.SuperConfig;
 import fr.mrmicky.fastinv.FastInv;
 import fr.mrmicky.fastinv.ItemBuilder;
 import org.bukkit.Material;

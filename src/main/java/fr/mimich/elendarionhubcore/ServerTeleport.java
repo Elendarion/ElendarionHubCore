@@ -8,18 +8,18 @@ public class ServerTeleport {
 
     private ElendarionHubCore main;
 
-    private final String CHANNEL_NAME;
+    private final String channelName;
 
     public ServerTeleport(ElendarionHubCore main) {
         this.main = main;
-        this.CHANNEL_NAME = "BungeeCord";
-        this.main.getServer().getMessenger().registerOutgoingPluginChannel(this.main, this.CHANNEL_NAME);
+        this.channelName = "BungeeCord";
+        this.main.getServer().getMessenger().registerOutgoingPluginChannel(this.main, this.channelName);
     }
 
     public void teleportPlayerToServer(Player player, String serverName) {
         ByteArrayDataOutput out = ByteStreams.newDataOutput();
         out.writeUTF("Connect");
         out.writeUTF("server");
-        player.sendPluginMessage(this.main, this.CHANNEL_NAME, out.toByteArray());
+        player.sendPluginMessage(this.main, this.channelName, out.toByteArray());
     }
 }
